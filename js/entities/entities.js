@@ -11,10 +11,10 @@ game.PlayerEntity = me.Entity.extend({
                 }
             }]);
         
-    this.body.setVelocity(5, 0);    
+    this.body.setVelocity(5, 20);    
         
     },
-    update: function(){
+    update: function(delta){
         if(me.input.isKeyPressed("right")){
            //sets the position of my x by adding the velocity defined above in 
            //setvelocity() and multiplying it by me.timer.tick.
