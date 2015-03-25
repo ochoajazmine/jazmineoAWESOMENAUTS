@@ -7,7 +7,8 @@ game.resources = [
         {name: "background-tiles", type:"image", src: "data/img/background-tiles.png"},
         {name: "meta-tiles", type:"image", src: "data/img/meta-tiles.png"},
         {name: "player", type:"image", src: "data/img/orcSpear.png"},
-
+        {name: "tower", type:"image", src: "data/img/tower_round.svg.png"},
+        {name: "creep1", type:"image", src: "data/img/brainmonster.png"},
 
 	/* Atlases 
 	 * @example
