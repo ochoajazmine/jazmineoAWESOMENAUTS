@@ -5,10 +5,30 @@ var game = {
 	// an object where to store game information
 	data : {
 		// score
-		score : 0
+		score : 0,
+                enemyBaseHealth: 10,
+                playerBaseHaelth: 10,
+                enemyCreepHealth: 10,
+                playerHealth: 10,
+                enemyCreepAttack: 1,
+                playerAttack: 1,
+                
+                playerAttackTime: 1000,
+                enemyCreepAttackTimer: 1000,
+                playerMoveSpeed: 5,
+                creepMoveSpeed: 5,
+                gameManager: "",
+                player: "",
+                exp: 0,
+                gold: 0,
+                exp1: 0,
+                exp2: 0,
+                exp3: 0,
+                exp4: 0
+                
 	},
-	
-	
+    
+    
 	// Run on page load.
 	"onload" : function () {
 	// Initialize the video.
@@ -49,6 +69,6 @@ var game = {
 		me.state.set(me.state.PLAY, new game.PlayScreen());
 
 		// Start the game.
-		me.state.change(me.state.PLAY);
+		me.state.change(me.state.MENU);
 	}
 };
