@@ -3,19 +3,19 @@ game.TitleScreen = me.ScreenObject.extend({
 	 *  action to perform on state change
 	 */
 	onResetEvent: function() {	
-		me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title-screen'))); // TODO
+		me.game.world.addChild(new me.Sprite(0, 0, me.loader.getImage('title-screen')), -10); // TODO
                 
                 me.input.bindKey(me.input.KEY.ENTER, "start");
 	
-                me.game.world.addChild(new (me.renderable.extend({
+                me.game.world.addChild(new (me.Renderable.extend({
                     init: function(){
-                   this._super(me.renderable, 'init', [510, 30, me.game.viewport.width, me.game.viewport.height]);                   
-                   this.font = new me. font("arial", 46, "white");
+                   this._super(me.Renderable, 'init', [510, 30, me.game.viewport.width, me.game.viewport.height]);                   
+                   this.font = new me. Font("arial", 46, "white");
                     
                     },
                     
-                    draw: function(){
-                        this.font.draw(renderer.getContext(), "awesomenauts!, 450,130");
+                    draw: function(renderer){
+                        this.font.draw(renderer.getContext(), "awesomenauts!", 450,130);
                         this.font.draw(renderer.getContext(), "press ENTER to play!", 250,530);
                         
                     }
