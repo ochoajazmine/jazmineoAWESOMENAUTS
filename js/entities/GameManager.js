@@ -94,6 +94,8 @@
                 }
             }
             
+            this.checkBuyKeys();
+            
             return true;
             
         },
@@ -129,12 +131,12 @@
                     
             draw: function(renderer) {
                 this.font.draw(renderer.getContext(), "PRESS F1-F6 TO BUY, B TO EXIT . current Gold: "  + game.data.gold, this.pos.x, this.pos.y);
-                this.font.draw(renderer.getContext(), "skill 1: Increase Damage ", this.pos.x, this.pos.y +40);
-                this.font.draw(renderer.getContext(), "skill 2: run Faster ", this.pos.x, this.pos.y +80);
-                this.font.draw(renderer.getContext(), "skill 3: Increase Health ", this.pos.x, this.pos.y +120);
-                this.font.draw(renderer.getContext(), "Q Ability ", this.pos.x, this.pos.y +160);
-                this.font.draw(renderer.getContext(), "W Ability ", this.pos.x, this.pos.y +200);
-                this.font.draw(renderer.getContext(), " E Ability ", this.pos.x, this.pos.y +240);
+                this.font.draw(renderer.getContext(), "skill 1: Increase Damage.current Level: " +game.data.skill1 + " cost: " +((game.data.skill1 + 1)*10),this.pos.x, this.pos.y +40);
+                this.font.draw(renderer.getContext(), "skill 2: run Faster! current level "  +game.data.skill2 + " cost: " +((game.data.skill2 + 1)*10), this.pos.x, this.pos.y +80);
+                this.font.draw(renderer.getContext(), "skill 3: Increase Health.current level "  +game.data.skill3 + " cost: " +((game.data.skill3 + 1)*10), this.pos.x, this.pos.y +120);
+                this.font.draw(renderer.getContext(), "Q Ability: speed Burst.current level: "  +game.data.ability1 + " cost: " +((game.data.ability1 + 1)*10), this.pos.x, this.pos.y +160);
+                this.font.draw(renderer.getContext(), "W Ability: eat your creep for health: "  +game.data.ability2 + " cost: " +((game.data.ability2 + 1)*10), this.pos.x, this.pos.y +200);
+                this.font.draw(renderer.getContext(), " E Ability: throw your spear: "  +game.data.ability3 + " cost: " +((game.data.ability3 + 1)*10), this.pos.x, this.pos.y +240);
                 
             }
 
