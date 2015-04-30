@@ -22,6 +22,7 @@ game.EnemyCreep = me.Entity.extend({
         this.now = new Date().getTime();
         this.body.setVelocity(3, 20);
         this.type = "EnemyCreep";
+        //the settings on the animation walk 
         this.renderable.addAnimation("walk", [3, 4, 5], 80);
         this.renderable.setCurrentAnimation("walk");
     },
@@ -33,7 +34,7 @@ game.EnemyCreep = me.Entity.extend({
         if (this.health <= 0) {
             me.game.world.removeChild(this);
         }
-
+        
         this.now = new Date().getTime();
         this.body.vel.x -= this.body.accel.x * me.timer.tick;
         me.collision.check(this, true, this.collideHandler.bind(this), true);
